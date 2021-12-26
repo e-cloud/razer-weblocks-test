@@ -1,24 +1,26 @@
-# New Project
+# Razer weblocks test
 
-> ✨ Bootstrapped with Create Snowpack App (CSA).
+## type checking
 
-## Available Scripts
+see `src/index.ts`.
 
-### npm start
+## Problem solving skills(answers)
 
-Runs the app in the development mode.
-Open http://localhost:8080 to view it in the browser.
+1. see the solution in `types/static.d.ts`, and the testing code in `src/index.ts`
 
-The page will reload if you make edits.
-You will also see any lint errors in the console.
+2. to make developer easier, the solution I could come up with, is to use **a http server(like nginx)** and map those various port to another origin's path
 
-### npm run build
+for example
+```
+localhost:8080
+localhost:8081
+localhost:8082
+```
+map to
+```
+localhost/8080
+localhost/8081
+localhost/8082
+```
 
-Builds a static copy of your site to the `build/` folder.
-Your app is ready to be deployed!
-
-**For the best production performance:** Add a build bundler plugin like [@snowpack/plugin-webpack](https://github.com/snowpackjs/snowpack/tree/main/plugins/plugin-webpack) or [snowpack-plugin-rollup-bundle](https://github.com/ParamagicDev/snowpack-plugin-rollup-bundle) to your `snowpack.config.mjs` config file.
-
-### Q: What about Eject?
-
-No eject needed! Snowpack guarantees zero lock-in, and CSA strives for the same.
+3. see script code in `public/index.html`, just enable the windowFeatures **noopener**, tested in Firefox and Chromium family!

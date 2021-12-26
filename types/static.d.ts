@@ -57,3 +57,6 @@ declare module '*.png' {
 }
 
 /* CUSTOM: ADD YOUR OWN HERE */
+declare interface USB extends EventTarget {
+  getTotalDevices() : Promise<number>
+}
